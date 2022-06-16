@@ -239,7 +239,7 @@ def get_args():
 
 def exit_handler():
     print_v("Exiting...")
-    subprocess.run("pkill -f ex4_srv.o",shell=True)
+    #subprocess.run("pkill -f ex4_srv.o",shell=True)
 
     
 if __name__ == "__main__":

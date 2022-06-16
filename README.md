@@ -7,9 +7,13 @@ run using terminal via
 ```
 python3 ex4_tests.py
 ```
+
 *Optionally you can add -v or --verbose flag for troubleshooting/exception viewing
 
-There is an optional file "ex4_test_acync" for async launch of clients - Experimental.
+*There is an optional flag -a for async launch of clients - Experimental.
+
+*If you want to run N clients concurrently use the -t (insert your number here) flag.
+
 **THIS TESTS DO NOT REFLECT ON YOUR GRADE,THEY SERVE ONLY TO FOR YOUR PERSONAL TESTING.**
 
 ## **APPROXIMATE RUN TIME ON PLANET**

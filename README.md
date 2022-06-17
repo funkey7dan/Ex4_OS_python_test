@@ -5,7 +5,7 @@ Simple tests for Ex4 in operating systems at BIU.
 To run extract the makefile and ex4_test.py to the folder containing ex4_srv.c and ex4_client.c.
 run using terminal via
 ```
-python3 ex4_tests.py
+python3 ex4_test.py
 ```
 
 Full list of command line options:

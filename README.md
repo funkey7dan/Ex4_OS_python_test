@@ -8,11 +8,15 @@ run using terminal via
 python3 ex4_tests.py
 ```
 
-*Optionally you can add -v or --verbose flag for troubleshooting/exception viewing
+Full list of command line options:
+```
 
-*There is an optional flag -a for async launch of clients - Experimental.
-
-*If you want to run N clients concurrently use the -t (insert your number here) flag.
+  -h, --help            show this help message and exit
+  --verbose, -v         turn verbose on
+  --atests ATESTS, -t ATESTS
+                        number of async tests to run, where ATESTS is a number you insert(3 by default)
+  --asynctest, -a       run async tests
+```
 
 **THIS TESTS DO NOT REFLECT ON YOUR GRADE,THEY SERVE ONLY TO FOR YOUR PERSONAL TESTING.**
 

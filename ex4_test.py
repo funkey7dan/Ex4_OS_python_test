@@ -105,7 +105,7 @@ def test_zero_div(server_pid):
         print(bcolors.OKGREEN+"Expected: "+str(expected)+" Got: "+str(output)+" Correct"+bcolors.CEND)
     else:
         print(bcolors.FAIL+"Expected: "+str(expected)+" Got: "+str(output)+" Wrong"+bcolors.CEND)
-         diff = (difflib.ndiff(expected,output))
+        diff = (difflib.ndiff(expected,output))
         print("Differences: ")
         for change in diff:
           if change[0] == "-":

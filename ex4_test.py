@@ -1,4 +1,3 @@
-from ast import Is
 import atexit
 import random
 import re
@@ -9,6 +8,7 @@ import time
 import subprocess
 import multiprocessing
 import argparse
+import difflib
 
 
 VERBOSE = False
@@ -105,6 +105,13 @@ def test_zero_div(server_pid):
         print(bcolors.OKGREEN+"Expected: "+str(expected)+" Got: "+str(output)+" Correct"+bcolors.CEND)
     else:
         print(bcolors.FAIL+"Expected: "+str(expected)+" Got: "+str(output)+" Wrong"+bcolors.CEND)
+         diff = (difflib.ndiff(expected,output))
+        print("Differences: ")
+        for change in diff:
+          if change[0] == "-":
+            print(b"Missing:"+change[2:].encode())
+          elif change[0] == "+":
+            print(b"Redundant:"+change[2:].encode())
         raise AssertionError
 
 def test_results():

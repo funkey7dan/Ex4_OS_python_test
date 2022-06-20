@@ -9,6 +9,7 @@ import subprocess
 import multiprocessing
 import argparse
 import difflib
+import getpass
 
 
 VERBOSE = False
@@ -162,7 +163,8 @@ def test_cleanup():
     return True
 
 def test_zombies():
-    proc = subprocess.Popen("pgrep ex4_srv.o",shell=True,stdout=subprocess.PIPE)
+    proc = subprocess.Popen("pgrep -u "+getpass.getuser()+" ex4_srv.o",shell=True,stdout=subprocess.PIPE)
+    print_v("pgrep -u "+getpass.getuser()+" ex4_srv.o")
     output = proc.stdout.read() #get the output from the process run
     if(output==b''): return True
     return False

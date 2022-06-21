@@ -9,6 +9,7 @@ import subprocess
 import multiprocessing
 import argparse
 import difflib
+import getpass
 
 
 VERBOSE = False
@@ -22,6 +23,11 @@ class bcolors:
     OKCYAN = '\033[96m'
     CEND = '\033[0m'
 
+def div_c(a, b):
+    if (a >= 0) != (b >= 0) and a % b:
+        return a // b + 1
+    else:
+        return a // b
 
 def print_v(obj):
     global VERBOSE
@@ -62,9 +68,9 @@ def test_argc():
 
 def start_client(server_pid):
     # generate random input to start client with
-    num1 = random.randint(0,99)
+    num1 = random.randint(-999,999)
     operator = random.randint(1,4)
-    num2 = random.randint(0,99)
+    num2 = random.randint(-999,999)
     if(operator==1):
         print("testing: "+str(num1)+"+"+str(num2))
         expected = num1+num2
@@ -77,7 +83,7 @@ def start_client(server_pid):
     elif(operator==4):
         if(num2==0): num2=1
         print("testing: "+str(num1)+"/"+str(num2))
-        expected = num1//num2
+        expected = div_c(num1,num2)
     proc = subprocess.Popen("./ex4_client.o " + str(server_pid)+ " " +str(num1)+ " "+str(operator)+" "+str(num2),shell=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
     output = proc.stdout.read() #get the output from the process run
     errors = proc.stderr.read()
@@ -162,7 +168,8 @@ def test_cleanup():
     return True
 
 def test_zombies():
-    proc = subprocess.Popen("pgrep ex4_srv.o",shell=True,stdout=subprocess.PIPE)
+    proc = subprocess.Popen("pgrep -u "+getpass.getuser()+" ex4_srv.o",shell=True,stdout=subprocess.PIPE)
+    print_v("pgrep -u "+getpass.getuser()+" ex4_srv.o")
     output = proc.stdout.read() #get the output from the process run
     if(output==b''): return True
     return False

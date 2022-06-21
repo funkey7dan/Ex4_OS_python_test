@@ -206,7 +206,7 @@ def main():
         assert test_results()
         print(bcolors.OKGREEN+"Passed results"+bcolors.CEND)
         print(bcolors.OKCYAN+"sleeping for timeout"+bcolors.CEND)
-        time.sleep(60)
+        time.sleep(65)
     except AssertionError as e:
         print_v(e)
         print(bcolors.FAIL+"Check results failed"+bcolors.FAIL)

@@ -1,6 +1,10 @@
 # Ex4_OS_python_test
 
 Simple tests for Ex4 in operating systems at BIU.
+##Updates:
+
+Merged experimental into main, it seemed to work for everyone. Now 'main' branch should work as expected on Planet.
+
 ## How-to use
 To run extract the makefile and ex4_test.py to the folder containing ex4_srv.c and ex4_client.c.
 run using terminal via

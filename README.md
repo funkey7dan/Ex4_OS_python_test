@@ -1,7 +1,8 @@
 # Ex4_OS_python_test
 
 Simple tests for Ex4 in operating systems at BIU.
-##Updates:
+
+## Updates:
 
 Merged experimental into main, it seemed to work for everyone. Now 'main' branch should work as expected on Planet.
 
